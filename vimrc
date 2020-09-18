@@ -10,16 +10,27 @@ syntax on                  " Enable syntax highlighting.
 "
 call plug#begin('~/.vim/plugged')
 
+" Theme
 Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" Linting, code completion, etc.
 Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" Files
 Plug 'Shougo/denite.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
+
+" Languages
+" Go
+Plug 'faith/vim-go', {'do': ':UpdateRemotePlugins'}
+" Python
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+" Rust
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
