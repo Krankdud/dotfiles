@@ -145,6 +145,11 @@ call denite#custom#var('grep', {
 let g:airline_powerline_fonts = 1
 
 "
+" === rust.vim ===
+"
+let g:rustfmt_autosave = 1
+
+"
 " === Key mappings === 
 "
 
