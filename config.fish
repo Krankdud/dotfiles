@@ -5,3 +5,5 @@ end
 
 alias vim="nvim"
 alias python="python3"
+
+fish_ssh_agent
