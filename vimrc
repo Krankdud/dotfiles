@@ -33,6 +33,10 @@ Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 " Rust
 Plug 'rust-lang/rust.vim'
 
+" Writing
+Plug 'junegunn/goyo.vim'
+Plug 'reedes/vim-pencil'
+
 call plug#end()
 
 "
@@ -117,6 +121,29 @@ let g:airline_powerline_fonts = 1
 let g:rustfmt_autosave = 1
 
 "
+" === Goyo ===
+"
+function! s:goyo_enter()
+    set nocursorline
+endfunction
+
+function! s:goyo_leave()
+    set cursorline
+endfunction
+
+au! User GoyoEnter nested call <SID>goyo_enter()
+au! User GoyoLeave nested call <SID>goyo_leave()
+
+"
+" === vim-pencil ===
+"
+augroup pencil
+    au!
+    au FileType markdown call pencil#init()
+                \ | setl wrap sw=2 ts=2
+augroup END
+
+"
 " === Key mappings === 
 "
 
@@ -134,3 +161,4 @@ nnoremap \ :NERDTreeToggle<cr>
 " === Commands ===
 "
 com! FormatJSON %!python -m json.tool
+com! InsertDate put =strftime('%c')
