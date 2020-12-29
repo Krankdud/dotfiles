@@ -14,6 +14,18 @@ mkdir -p ~/.vim/files/swap
 mkdir -p ~/.vim/files/undo
 mkdir -p ~/.vim/files/info
 
+echo "Use ~/.vimrc in neovim..."
+mkdir -p ~/.config/nvim
+echo "set runtimepath^=~/.vim runtimepath+=~/.vim/after" > ~/.config/nvim/init.vim
+echo "let &packpath = &runtimepath" >> ~/.config/nvim/init.vim
+echo "source ~/.vimrc" >> ~/.config/nvim/init.vim
+echo "Done!"
+
+echo "Installing vim-plug..."
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+echo "Done!"
+
 echo "Installing base16-shell..."
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 echo "Done!"
