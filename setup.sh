@@ -34,6 +34,10 @@ echo "Installing tmux plugin manager..."
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 echo "Done!"
 
+echo "Installing fisher..."
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+echo "Done!"
+
 echo ""
 echo "setup.sh complete!"
 echo "Todo:"
